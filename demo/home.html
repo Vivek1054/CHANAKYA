@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JARVIS - Home</title>
+</head>
+<body>
+  <h1>Welcome to JARVIS</h1>
+  <button onclick="startGuestSession()">Explore Now</button>
+  <button onclick="loginUser()">Login</button>
+
+  <script>
+    function startGuestSession() {
+      sessionStorage.setItem('guest', 'true');
+      sessionStorage.setItem('startTime', Date.now());
+      localStorage.removeItem('loggedIn');
+      window.location.href = 'index.html';
+    }
+
+    function loginUser() {
+      localStorage.setItem('loggedIn', 'true');
+      sessionStorage.removeItem('guest');
+      sessionStorage.removeItem('startTime');
+      window.location.href = 'index.html';
+    }
+  </script>
+</body>
+</html>

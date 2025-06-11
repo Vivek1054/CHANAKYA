@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JARVIS - Assistant</title>
+</head>
+<body>
+  <h1>Welcome to the JARVIS Assistant</h1>
+
+  <script>
+    const isGuest = sessionStorage.getItem('guest') === 'true';
+    const guestStart = parseInt(sessionStorage.getItem('startTime') || 0);
+    const isLoggedIn = localStorage.getItem('loggedIn') === 'true';
+
+    if (isLoggedIn) {
+      console.log("✅ Logged in - unlimited access");
+    } else if (isGuest && guestStart) {
+      const timeLimit = 60 * 100; // 1 minute
+      const timeElapsed = Date.now() - guestStart;
+
+      if (timeElapsed >= timeLimit) {
+        alert("⏰ Guest session expired. Please log in to continue.");
+        sessionStorage.clear();
+        window.location.href = "home.html";
+      } else {
+        setTimeout(() => {
+          alert("⏰ Guest session expired. Please log in to continue.");
+          sessionStorage.clear();
+          window.location.href = "home.html";
+        }, timeLimit - timeElapsed);
+      }
+
+    } else {
+      alert("⚠️ Please use 'Explore Now' or Login from the home page.");
+      window.location.href = "home.html";
+    }
+  </script>
+</body>
+</html>
