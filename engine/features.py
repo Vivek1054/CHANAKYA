@@ -10,7 +10,7 @@ import webbrowser
 from playsound import playsound
 import eel
 import pvporcupine
-import pyaudio
+#import pyaudio
 import pyautogui
 from engine.command import speak
 from engine.config import ASSISTANT_NAME
