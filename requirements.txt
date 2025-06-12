@@ -1,0 +1,12 @@
+eel
+pyttsx3
+SpeechRecognition
+pyjokes
+wikipedia
+mysql-connector-python
+playsound==1.2.2
+pvporcupine
+pyaudio
+pyautogui
+pywhatkit
+hugchat
