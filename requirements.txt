@@ -6,7 +6,12 @@ wikipedia
 mysql-connector-python
 playsound==1.2.2
 pvporcupine
+pyproject-toml
 pyaudio
 pyautogui
 pywhatkit
 hugchat
+Flask
+pyttsx3
+requests
+wikipedia
